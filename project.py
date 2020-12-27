@@ -8,18 +8,26 @@ notlar={
 }
 secilen=[]
 def giris():
-    deneme=3
-    while deneme > 0:
-        ad=input()
-        soyad=input()
-        if adb != ad or soyadb != soyadb:
-            print("yanlış tekrar deneyin")
-            deneme-=1
-        else:
-            correct=True
-            print("hoşgeldin",adb)
-    print("daha sonra tekrar dene")
-
+    counter=1
+    while counter < 4:
+        ad =input("adınızı girin:")
+        soyad= input("soydınızı girin:")
+        if (ad != adb and soyad!= soyadb ):
+            print("hata tekrar deneyin")
+            counter+=1
+        elif (ad == adb and soyad!= soyadb):
+            print("hata tekrar deneyin")
+            counter+=1
+        elif (ad != adb and soyad== soyadb):
+            print("hata tekrar deneyin")
+            counter+=1
+        else: 
+            print("Welcome ", ad)
+            counter=5
+            A=1
+        if counter==4 :
+            print("daha sonra tekrar dene")
+            A=0
 def ders_liste():
     i=0
    
@@ -63,6 +71,7 @@ def notlandirma():
 
 
 def main():
+    giris()
     ders_liste()
     ders_al()
     notlandirma()
